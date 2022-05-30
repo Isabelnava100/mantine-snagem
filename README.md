@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Push
+
+git add .
+git commit -m "Add existing file"
+git push origin main
+
+## Pull
+
+git init
+git remote add main [GIT_URL]
+git fetch main
+git checkout main
