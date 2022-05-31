@@ -1,11 +1,17 @@
 
+import { Button } from "@mantine/core";
+import { Link } from 'react-router-dom';
 
-function Home() {
+function Homepage() {
   return (
-    <div className="App">
-     test change 
+    <div className="m-2">    
+    <Button<typeof Link>
+    component={Link} to="register"
+    variant="filled">
+      Click to Sign Up
+    </Button>
     </div>
   );
 }
 
-export default Home;
+export default Homepage;
