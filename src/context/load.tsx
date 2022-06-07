@@ -2,13 +2,15 @@
   
 // import api from '../api/posts';
 // import { AxiosError } from 'axios';
-import { createContext, useEffect, useState } from 'react'
-import { PostsA } from './interfaces';
+// import { createContext } from 'react'
+// import { PostsState } from './interfaces';
+export const test=1;
+// export type TodoContextProps= 
+// {
+//     state:PostsState
+// }
 
-
-export const DataContext = createContext<PostsA | null>(null);
-
-console.log('loaded');
+// export const DataContext = createContext<TodoContextProps>({} as TodoContextProps);
 
 
 

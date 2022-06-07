@@ -1,22 +1,12 @@
 
-import {PostsState,PostsA } from "./interfaces";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { Reducer } from "./reducer";
-
-import { createContext } from 'react'
-
- const DataContext = createContext<PostsState | null>(null);
+import { TodoContext } from "./Context";
+import { INITIAL_STATE } from "./int";
 
 
-const initialState:PostsState= {
-  tCount: 0,
-  todos: [{
-    id:1,
-    title:'hi',
-    body:'hii'
-  }],
-  completed: 0
-}
+
+
 
 interface ProviderProps {
     children: JSX.Element | JSX.Element[]
@@ -24,15 +14,15 @@ interface ProviderProps {
 
 
 
-export const TheProvider = ({children}:ProviderProps) => {
+export const Provider = ({children}:ProviderProps) => {
 
-    const [state, dispatch]= useReducer(Reducer, initialState);
-
+    const [todoState, dispatch]= useReducer(Reducer, INITIAL_STATE);
+  
 
   return (
-    <DataContext.Provider value={state}>
+    <TodoContext.Provider value={{todoState}}>
     {children}
-    </DataContext.Provider>
+    </TodoContext.Provider>
 
     
   )

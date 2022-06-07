@@ -1,11 +1,11 @@
-import { PostsState,PostsA } from "./interfaces";
+import { TodoState,Todo } from "./interfaces";
 
 type BaseActions=
-| {type:'addNew',payload:PostsA}
+| {type:'addNew',payload:Todo}
 | {type:'editExi',payload: {id:string}}
 
 export const Reducer=
-(state:PostsState, action:BaseActions):PostsState=>{
+(state:TodoState, action:BaseActions):TodoState=>{
 
 
 
