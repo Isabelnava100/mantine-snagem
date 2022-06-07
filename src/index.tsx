@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes as Switch, Route } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
+import { Provider } from './context/TheProvider';
 
 import './assets/styles/index.css';
 
@@ -9,7 +10,7 @@ import Home from './pages/HomePage';
 import SharedLayout from './pages/SharedLayout';
 import Register from './pages/auth/Register';
 import Test from './pages/marketplace/test';
-import { Provider } from './context/TheProvider';
+import Forum from './pages/forum/main';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -29,6 +30,7 @@ root.render(
             <Route index element={<Home/>}/>
             <Route path="register" element={<Register/>} /> 
             <Route path="marketplace" element={<Test/>} /> 
+            <Route path="forum" element={<Forum/>} /> 
           </Route>
         </Switch>
       </BrowserRouter>
