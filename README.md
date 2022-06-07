@@ -45,15 +45,11 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Push
+## Updates
+
+git pull
 
 git add .
-git commit -m "Add existing file"
+git commit -m "msg"
 git push origin main
 
-## Pull
-
-git init
-git remote add main [GIT_URL]
-git fetch main
-git checkout main
