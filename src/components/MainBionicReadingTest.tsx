@@ -1,5 +1,21 @@
 
 import { Container, Table, Text } from '@mantine/core';
+import json from '../context/json.json';
+import { useState } from 'react';
+import BionicButton from './BionicButton';
+import DOMPurify from "dompurify";
+
+function basic(value:any){ 
+let v= value.map((e: string)=>
+    e.split(" ").map(x=> `<strong>${ x.substring(0, 3) }</strong>${ x.substring(3) }` ));
+
+    return DOMPurify.sanitize(v,{ALLOWED_TAGS: ['b', 'strong'], ALLOWED_ATTR: ['style']});
+    //`<b>${ x.substring(0, 3) }</b>${ x.substring(3) }`
+    //.reduce((previousValue, currentValue) => previousValue + ' ' + currentValue)
+    //let clean = 
+    
+}
+
 
 
 function Forum() {
@@ -30,6 +46,18 @@ function Forum() {
       </tr></>);
     
 
+    //const [value, toggle] = useToggle('blue', ['blue', 'orange']);
+    
+    const [value, setVal] = useState(json.widget.window);
+    /*
+console.log(
+    value.map((e: string)=>
+    e.split(" ").map(x=> x.replace(/(\w+) (.*)/,"<b>$1</b> $2") )
+    //e.replace(/(\w+) (.*)/,"<b>$1</b> $2") 
+    )  
+    
+);*/
+console.log(basic(value));
 
   return (
     <Container size="lg" style={{marginTop:10}}>
@@ -38,6 +66,8 @@ function Forum() {
       <thead>{ths}</thead>
       <tbody>{rows}</tbody>
         </Table>
+        {basic(value)}
+       <BionicButton val={value} thestate={setVal}/>
        </>
         </Container>
   )

@@ -80,7 +80,7 @@ const useStyles = createStyles((theme) => ({
 
 
 function Homepage() {
-  const {todoState} = useContext(TodoContext);
+ // const {todoState} = useContext(TodoContext);
   //console.log(todoState);
   const { classes } = useStyles();
   return (
