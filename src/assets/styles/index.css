@@ -67,14 +67,28 @@ a {
   display: block;
 }
 
+.bg-grape {
+  background-color:#9C36B5;
+}
+
+#accessmodal {
+  top: auto;
+    right: 0;
+    width: 50%;
+    height: 40vh;
+    bottom: 0;
+    left: auto;
+}
+#accessmodal .mantine-Modal-modal{border:2px solid #58168f;}
+#accessmodal-body {padding:10px 0;}
+#accessmodal .mantine-Modal-inner {padding:0;}
 
 @media screen and (max-width: 1023px) {
  
+#accessmodal {
+  width:100%;
+}
     .border-t-2 {border-top:2px solid #7e22ce
       ;}
   
-}
-
-.bg-grape {
-  background-color:#9C36B5;
 }

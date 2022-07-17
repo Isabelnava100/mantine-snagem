@@ -5,13 +5,9 @@ import { TodoContext } from "./Context";
 import { INITIAL_STATE } from "./int";
 
 
-
-
-
 interface ProviderProps {
     children: JSX.Element | JSX.Element[]
 }
-
 
 
 export const Provider = ({children}:ProviderProps) => {
