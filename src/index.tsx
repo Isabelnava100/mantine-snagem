@@ -30,7 +30,10 @@ root.render(
             <Route index element={<Home/>}/>
             <Route path="register" element={<Register/>} /> 
             <Route path="marketplace" element={<Test/>} /> 
-            <Route path="forum" element={<Forum/>} /> 
+            <Route path="forum" element={<Forum/>} > 
+              <Route path="thread" element={"thread"} /> 
+            </Route>
+            <Route path="*" element={"404 err"} /> 
           </Route>
         </Switch>
       </BrowserRouter>
