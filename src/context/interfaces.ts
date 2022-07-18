@@ -39,3 +39,13 @@ export interface Roles {
   name:string;
   userActive:boolean;
 }
+
+
+export interface HeaderTabsProps {
+  links: { link: string; label: string }[];
+
+}
+export interface ForumPlaceInterface {
+  forumPlace:string;
+
+}

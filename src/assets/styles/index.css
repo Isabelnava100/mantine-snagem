@@ -49,6 +49,10 @@ a {
   background-color: #58168f;
 }
 
+/* .mantine-svc93q,.mantine-ScrollArea-thumb, .mantine-ScrollArea-scrollbar {
+  background-color:#6b21a5;
+} */
+
 .small-nav { 
     @apply text-base rounded-md px-3 w-max text-white whitespace-nowrap border-black
     relative snap-start scroll-ml-1 border-b-4 tracking-wider uppercase

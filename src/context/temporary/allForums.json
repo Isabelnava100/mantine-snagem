@@ -1,0 +1,62 @@
+[
+    {
+        "id": 2,
+        "param": "side",
+        "forum_title": "Side Roleplay",
+        "forum_description": "Side roleplay location",
+        "latest_thread_id": 55,
+        "lastpostAuthor": 14,
+        "lastpostTime": "2022-03-24 06:53:05",
+        "lastpostUser": "neoixans"
+    },
+    {
+        "id": 3,
+        "param": "mm",
+        "forum_title": "Master Missions",
+        "forum_description": "Missions for special stuff",
+        "latest_thread_id": 20,
+        "lastpostAuthor": null,
+        "lastpostTime": null,
+        "lastpostUser": null
+    },
+    {
+        "id": 4,
+        "param": "quests",
+        "forum_title": "Quests",
+        "forum_description": "Pick up unique quests",
+        "latest_thread_id": 33,
+        "lastpostAuthor": null,
+        "lastpostTime": null,
+        "lastpostUser": null
+    },
+    {
+        "id": 7,
+        "param": "events",
+        "forum_title": "Events",
+        "forum_description": "Special events!",
+        "latest_thread_id": 63,
+        "lastpostAuthor": 9,
+        "lastpostTime": "2022-04-14 10:15:08",
+        "lastpostUser": "neoixan"
+    },
+    {
+        "id": 8,
+        "param": "private",
+        "forum_title": "Private",
+        "forum_description": "private stuff",
+        "latest_thread_id": null,
+        "lastpostAuthor": null,
+        "lastpostTime": null,
+        "lastpostUser": null
+    },
+    {
+        "id": 9,
+        "param": "archived",
+        "forum_title": "Archived",
+        "forum_description": "archived stuff",
+        "latest_thread_id": null,
+        "lastpostAuthor": null,
+        "lastpostTime": null,
+        "lastpostUser": null
+    }
+]

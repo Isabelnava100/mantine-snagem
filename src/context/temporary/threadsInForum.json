@@ -1,0 +1,30 @@
+[
+    {
+        "topics_id": 1,
+        "forum": 1,
+        "t_author": 9,
+        "topic_title": "Team Snagem HQ (Mt. Silver)",
+        "topic_description": "Description of the HQ",
+        "last_thread_id": 66,
+        "open": 1,
+        "lastpostAuthor": 9,
+        "lastpostTime": "2022-04-21 02:55:33",
+        "lastpostUser": "neoixan",
+        "id": 1,
+        "param": "main"
+    },
+    {
+        "topics_id": 21,
+        "forum": 1,
+        "t_author": 9,
+        "topic_title": "Text editor Test",
+        "topic_description": "quick test on stuff",
+        "last_thread_id": 61,
+        "open": 1,
+        "lastpostAuthor": 9,
+        "lastpostTime": "2022-04-12 08:39:32",
+        "lastpostUser": "neoixan",
+        "id": 1,
+        "param": "main"
+    }
+]
