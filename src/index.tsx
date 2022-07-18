@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes as Switch, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes as Switch, Route, Navigate, HashRouter } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
 import { Provider } from './context/TheProvider';
 
@@ -26,7 +26,8 @@ root.render(
       primaryColor:'violet'
     }} withGlobalStyles withNormalizeCSS>
       <Provider>
-      <BrowserRouter>
+      <BrowserRouter>  
+       <HashRouter >
         <Switch>
           <Route path="/" element={<SharedLayout/>}>
             <Route index element={<Home/>}/>
@@ -49,6 +50,7 @@ root.render(
             <Route path="*" element={"404 err"} /> 
           </Route>
         </Switch>
+        </HashRouter>
       </BrowserRouter>
       </Provider>
     </MantineProvider>
