@@ -31,12 +31,8 @@ const useStyles = createStyles((theme) => {
   return {
     wrapper: {
       display: 'flex',
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-      borderRadius: theme.radius.lg,
       padding: 4,
-      border: `1px solid ${
-        theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[2]
-      }`,
+      gap:12,
 
       [BREAKPOINT]: {
         flexDirection: 'column',
@@ -46,9 +42,12 @@ const useStyles = createStyles((theme) => {
     form: {
       boxSizing: 'border-box',
       flex: 1,
-      padding: theme.spacing.xl,
+      padding: theme.spacing.md,
       paddingLeft: theme.spacing.sm * 2,
       borderLeft: 0,
+      
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+      borderRadius: theme.radius.lg,
 
       [BREAKPOINT]: {
         padding: theme.spacing.sm,
@@ -86,14 +85,12 @@ const useStyles = createStyles((theme) => {
       position: 'relative',
       borderRadius: theme.radius.lg - 2,
       background: theme.fn.linearGradient(45, '#4338ca','#6b21a8',),
-      padding: theme.spacing.xl,
+      padding: theme.spacing.md,
       flex: '0 0 280px',
-      marginBottom:'20px',
-      marginTop:'20px',
+      marginBottom: 2,
+      
 
       [BREAKPOINT]: {
-        marginBottom: theme.spacing.sm,
-        marginTop:0,
         paddingLeft: theme.spacing.sm,
       },
     },
@@ -173,7 +170,7 @@ export function NewTopic() {
           />
           <Select
             data={data} mb="md"
-            
+            label="With"            
             placeholder="Choose your team"
             required
           />

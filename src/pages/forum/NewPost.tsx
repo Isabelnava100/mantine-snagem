@@ -16,7 +16,7 @@ import { useParams } from 'react-router-dom';
 import { Select,SimpleGrid } from '@mantine/core';
 
 const data = [
-  { value: '1', label: 'Main Forums' },
+  { value: '1', label: 'Main Forums testing, something super long like a team names of many pokes' },
   { value: '2', label: 'Side Roleplay' },
   { value: '3', label: 'Master Mission' },
   { value: '4', label: 'Quests' },
@@ -136,13 +136,23 @@ export function NewPost() {
 
        <div className={classes.form} >
           <Text size="lg" weight={700} className={classes.title}>
-            Make a Post
+            Make a Post on Title
           </Text>
 
           <div className={classes.fields}>
             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-              <TextInput label="Post As" placeholder="Choose your character" required />
-              <TextInput label="With" placeholder="Choose your team" required />
+            <Select
+            data={data} mb="md"
+            label="Post As"
+            placeholder="Choose your character "
+            required
+          />
+             <Select
+            data={data} mb="md"
+            label="With"
+            placeholder="Choose your team "
+            required
+          />
             </SimpleGrid>
           <Text size="sm" style={{ marginTop:10 }}>Your Message 
           <span aria-hidden="true" style={{color:'#ff6b6b'}}> *</span>

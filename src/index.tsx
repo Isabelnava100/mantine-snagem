@@ -15,6 +15,9 @@ import MiniNavForum from './pages/forum/components/MiniNavForum';
 import Threads from './pages/forum/MainThread';
 import { NewPost } from './pages/forum/NewPost';
 import { NewTopic } from './pages/forum/NewTopic';
+import { Login } from './pages/auth/Login';
+import { ForgotPassword } from './pages/auth/ForgotPW';
+import { DashboardProfileGrid } from './pages/profile/Dashboard';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -51,6 +54,9 @@ root.render(
               <Route path=":id/new" element={<NewTopic/>} /> 
               <Route path="new" element={<NewTopic/>} /> 
             </Route>
+            <Route path="login" element={<Login/>} /> 
+            <Route path="forgotpw" element={<ForgotPassword/>} />
+            <Route path="profile" element={<DashboardProfileGrid/>} /> 
             <Route path="*" element={"404 err"} /> 
           </Route>
         </Switch>

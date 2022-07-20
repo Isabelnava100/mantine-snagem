@@ -93,6 +93,8 @@ a {
 
 #backtotop {position:fixed; bottom:4px;left:4px;padding:8px;}
 
+.mantine-Select-wrapper {max-width:400px;}
+
 @media screen and (max-width: 1023px) {
  
 #accessmodal {
