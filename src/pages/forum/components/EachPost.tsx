@@ -4,6 +4,7 @@ import { createStyles, Card, Image, Avatar, Text, Group, Badge } from '@mantine/
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    margin:'20 0',
   },
 
   title: {
@@ -37,13 +38,13 @@ export function ArticleCardVertical({
 }: ArticleCardVerticalProps) {
   const { classes } = useStyles();
   return (
-    <Card withBorder radius="md" p={0} className={classes.card}>
+    <Card withBorder radius="md" p={0} className={classes.card} mt={12} mb={12}>
       <Group noWrap spacing={0}>
         <Image src={image} height={140} width={140} />
         <div className={classes.body}>
-          <Text transform="uppercase" color="dimmed" weight={700} size="xs">
-            {category}
-          </Text>
+            <Text color="dimmed" weight={700} size="xs"
+            dangerouslySetInnerHTML={{ __html: category }}>
+         </Text>
           <Text className={classes.title} mt="xs" mb="md">
             {title}
           </Text>

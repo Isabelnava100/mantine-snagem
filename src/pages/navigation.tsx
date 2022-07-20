@@ -43,7 +43,7 @@ const Navigation = () => {
         </label>
 
         <input type="checkbox" id="menu-toggle" checked={firstCheckbox} readOnly />
-        <Group mt={60}
+        <Group mt={60} onClick={handleMenu}
           className="mobileNAV"
           id="navbar"
         >

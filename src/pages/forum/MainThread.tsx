@@ -1,11 +1,10 @@
 
-import { Container, Pagination, Table, Text } from '@mantine/core';
-
 import { useEffect, useState } from 'react';
-import { LoadingOverlay, Button, Group } from '@mantine/core';
+import { Container, Pagination, LoadingOverlay, Button } from '@mantine/core';
 import threadJSON from '../../context/temporary/oneThread.json';
 import { ArticleCardVertical } from './components/EachPost';
 import { useParams } from 'react-router-dom';
+import { FeaturesTitle } from './components/setTitleperThread';
 const mewLoad=require('../../assets/icons/mewdumpy.gif');
 const searchIcon=require('../../assets/icons/searchIcon.png');
 
@@ -13,38 +12,57 @@ const searchIcon=require('../../assets/icons/searchIcon.png');
 function Threads() {
   const { id } = useParams();
   const [visible, setVisible] = useState<boolean>(true);
-  const [page, onChange] = useState<number>(1);
   const [postsFromThread, setPosts] = useState<object>(threadJSON);
-  const total=10;
-  const postPerPage=1;
+
+  const totalItemsCount=Object.keys(threadJSON).length;
+  const postPerPage=6;
+  const pagesCount=Math.ceil(totalItemsCount / postPerPage);
+
+  const [page, onChange] = useState<number>(1); //if last then pages = pagesCount
+  const start=(page - 1) * postPerPage;
+  const end=Math.min(page * postPerPage, totalItemsCount);
 
 useEffect(() => {
   if(visible){
   setVisible(false);
   setPosts(threadJSON);
   }else {
-console.log(page);
+//console.log(threadJSON);
   }
-}, [id,page]); //set to page
+}, [id, page]); //set to page
 
-      
   return (
       
-    <Container size="lg" style={{marginTop:20}}>
-        <div style={{ position: 'relative',display:'flex',minHeight:300,flexDirection:'column' }}>
-        <LoadingOverlay visible={visible} loader={<img src={mewLoad} alt="mew loading" />} />
-        {  visible?null:
+    <Container size="lg" style={{marginTop:20,paddingBottom:100}}>
+        <div id="loadingContainer">
+        <LoadingOverlay visible={visible} loader={<img src={mewLoad} alt="mew loading" style={{position:'fixed',top:'25%'}} />} />
+        {  !visible&&
         <>
-          <Pagination total={total} color="violet" withEdges page={page} onChange={onChange}   />
+        <FeaturesTitle />
+          <Pagination total={pagesCount} color="violet" withEdges page={page} onChange={onChange}  
+          style={{alignSelf: 'end'}} />
+          {postsFromThread&&
+          Object.values(postsFromThread).map((post,index)=>
+          index>=start&&index<=end&&
+          <ArticleCardVertical key={post.thread_id}
+          image={searchIcon} category={post.thread_post} title={''} date={'date'} author={{
+            name: 'name',
+            avatar: 'avie'
+          }}/>
+          )}
+          <Pagination total={pagesCount} color="violet" withEdges page={page} onChange={onChange} 
+          style={{alignSelf: 'end'}} />
+           <Button
+            variant="gradient"
+            gradient={{ deg: 133, from: 'grape', to: 'violet' }}
+            size="lg"
+            radius="md"
+            mt="xl"
+          >
+            Make a New Post
+          </Button>
           </>
         }
-        
-      
-          <br/>
-          {/* <ArticleCardVertical image={searchIcon} category={'cat'} title={'title'} date={'date'} author={{
-          name: 'name',
-          avatar: 'avie'
-        }}/> */}
 
       </div>
         </Container>

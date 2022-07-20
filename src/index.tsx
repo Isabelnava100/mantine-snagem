@@ -13,6 +13,8 @@ import Test from './pages/marketplace/test';
 import Forum from './pages/forum/MainForum';
 import MiniNavForum from './pages/forum/components/MiniNavForum';
 import Threads from './pages/forum/MainThread';
+import { NewPost } from './pages/forum/NewPost';
+import { NewTopic } from './pages/forum/NewTopic';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -27,30 +29,31 @@ root.render(
     }} withGlobalStyles withNormalizeCSS>
       <Provider>
       <BrowserRouter>  
-       <HashRouter >
         <Switch>
           <Route path="/" element={<SharedLayout/>}>
             <Route index element={<Home/>}/>
             <Route path="register" element={<Register/>} /> 
             <Route path="marketplace" element={<Test/>} /> 
             <Route path="forum" element={<MiniNavForum links={[
-              {label:'MAIN FORUMS',link:'1'},
-              {label:'SIDE RP',link:'2'},
-              {label:'MASTER MISSIONS',link:'3'},
-              {label:'QUESTS',link:'4'},
-              {label:'EVENTS',link:'7'},
-              {label:'PRIVATE',link:'8'},
-              {label:'ARCHIVED',link:'9'},
+              {label:'MAIN FORUMS',link:'/forum/1'},
+              {label:'SIDE RP',link:'/forum/2'},
+              {label:'MASTER MISSIONS',link:'/forum/3'},
+              {label:'QUESTS',link:'/forum/4'},
+              {label:'EVENTS',link:'/forum/7'},
+              {label:'PRIVATE',link:'/forum/8'},
+              {label:'ARCHIVED',link:'/forum/9'},
             ]} />} > 
               <Route index element={<Forum/>} /> 
               <Route path="thread" element={<Navigate to="../" />} /> 
-              <Route path="thread/:id" element={<Threads/>} /> 
+              <Route path="thread/:id" element={<Threads/>}/>
               <Route path="thread/:id/:page" element={<Threads/>} /> 
+              <Route path="thread/:id/post" element={<NewPost/>} /> 
+              <Route path=":id/new" element={<NewTopic/>} /> 
+              <Route path="new" element={<NewTopic/>} /> 
             </Route>
             <Route path="*" element={"404 err"} /> 
           </Route>
         </Switch>
-        </HashRouter>
       </BrowserRouter>
       </Provider>
     </MantineProvider>

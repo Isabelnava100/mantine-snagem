@@ -1,9 +1,8 @@
 
-import { Outlet, useOutletContext } from 'react-router-dom';
+import { Link, Outlet, useOutletContext,useNavigate  } from 'react-router-dom';
 
 import {
   createStyles,
-  Tabs,
   ScrollArea,
   Header,
   Group,
@@ -21,8 +20,11 @@ const useStyles = createStyles((theme) => ({
       },
       inner: {
           
+        [theme.fn.smallerThan('md')]: {
+          paddingLeft:20,
+        },
         [theme.fn.smallerThan('sm')]: {
-            width:730,paddingLeft:20
+            width:730,
           },
   width: 930, display:'flex', justifyContent:'  ',gap:6
   
@@ -67,24 +69,29 @@ const useStyles = createStyles((theme) => ({
 type ContextType = { active:string | null };
 
 
+
+
 export default function MiniNavForum({ links }: HeaderTabsProps) {
   const { classes, theme, cx } = useStyles();
   const [active, setActive] = useState<string | null>(links[0].link);
   const [opened, toggleOpened] = useBooleanToggle(false);
-
+  let navigate = useNavigate();
+  
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
-      href={link.link}
+      to={link.link}
       className={cx(classes.link, { [classes.linkActive]: active === link.link })}
       onClick={(event) => {
         event.preventDefault();
+        (window.location.pathname==='/forum'||window.location.pathname==='/forum/')? event.preventDefault(): navigate('/forum');
+        //check where you are
         setActive(link.link);
         toggleOpened(false);
       }}
     >
       {link.label}
-    </a>
+    </Link>
   ));
   return (
       <>

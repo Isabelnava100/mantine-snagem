@@ -1,5 +1,6 @@
 
 import { createStyles, Title, Text, Button, Container, useMantineTheme } from '@mantine/core';
+import { Link} from 'react-router-dom';
 
 
 const useStyles = createStyles((theme) => ({
@@ -68,24 +69,21 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    '&:not(:first-of-type)': {
-      marginLeft: theme.spacing.md,
-    },
-
+    marginLeft: theme.spacing.md,marginTop: theme.spacing.md,
     '@media (max-width: 520px)': {
       height: 42,
       fontSize: theme.fontSizes.md,
 
       '&:not(:first-of-type)': {
-        marginTop: theme.spacing.md,
         marginLeft: 0,
       },
     },
   },
 }));
 
-export function HeroText() {
-  const { classes } = useStyles();
+export function HeroText({send}:{send:string|null}) {
+
+    const { classes } = useStyles();
   const theme = useMantineTheme();
 
   return (
@@ -109,7 +107,8 @@ export function HeroText() {
           <Button className={classes.control} size="lg" variant="default" color="gray">
             Check Your Bookmarks
           </Button>
-          <Button className={classes.control} size="lg">
+          <Button className={classes.control} size="lg"
+            component={Link} to={`${send}/new`}>
             Create a New Topic
           </Button>
         </div>

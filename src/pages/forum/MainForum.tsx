@@ -14,7 +14,7 @@ function MainForum() {
   const place=forumPlace?.active;
   const [visible, setVisible] = useState(true);
     
-  console.log(place);
+  //console.log(place);
   
 useEffect(() => {
   setVisible(true);
@@ -46,7 +46,7 @@ useEffect(() => {
     <Container size="lg" style={{marginTop:20,paddingBottom:100}}>
         <div style={{ position: 'relative',display:'flex',flexDirection:'column' }}>
         <LoadingOverlay visible={visible} loader={<img src={mewLoad} alt="mew loading" />} />
-        <HeroText/>
+        <HeroText send={place}/>
    
         <Table highlightOnHover>
       <thead>{ths}</thead>
