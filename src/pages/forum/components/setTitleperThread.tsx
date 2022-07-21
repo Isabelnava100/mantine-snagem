@@ -1,7 +1,8 @@
 import React from 'react';
 import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col } from '@mantine/core';
 import { Link, useParams } from 'react-router-dom';
-
+import { Bookmark,BookmarkOff } from 'tabler-icons-react';
+import { BookmarkButton } from './BookmarkButton';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -33,16 +34,18 @@ export function FeaturesTitle() {
           <Title className={classes.title} order={2}>
           TM - A Mauv-olent Presence in the Bright City
           </Title>
+          <BookmarkButton/>
+
           <Text color="dimmed">
           Representatives from the Hoenn government have requested Team Snagem's assistance in investigating and dismantling an underground gang they believe to be trading in Shadow Pokemon.
           </Text>
-
+          
         </Col>
         <Col span={12} sm={2}>
        
         <Button
             variant="gradient"
-            gradient={{ deg: 133, from: 'grape', to: 'violet' }}
+            gradient={{ deg: 133, from: 'violet', to: 'grape' }}
             size="lg"
             radius="md"
             mt="xl"

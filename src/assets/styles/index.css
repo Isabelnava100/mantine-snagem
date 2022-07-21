@@ -91,9 +91,11 @@ a {
   position:relative;display:flex;min-height: 300px;flex-direction: column;
 }
 
-#backtotop {position:fixed; bottom:4px;left:4px;padding:8px;}
+#backtotop {position:fixed; bottom:4px;right:4px;padding:8px;}
 
 .mantine-Select-wrapper {max-width:400px;}
+
+.profileDashboard {display:flex;}
 
 @media screen and (max-width: 1023px) {
  
